@@ -19,8 +19,6 @@ test_data = datasets.FashionMNIST(
     download=True,
     transform=ToTensor(),
 )
-
-
 """
 batch_size = 64
 # Create data loaders.
@@ -101,7 +99,7 @@ def test(dataloader, model, loss_fn):
 if __name__ == '__main__':
     batch_size = 64
     # Create data loaders.
-    train_dataloader = DataLoader(training_data, batch_size=batch_size)
+    train_dataloader = DataLoader(training_data, batch_size=batch_size, shuffle=True)
     test_dataloader = DataLoader(test_data, batch_size=batch_size)
 
     for X, y in test_dataloader:
